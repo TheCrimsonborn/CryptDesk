@@ -13,6 +13,9 @@ jobs:
   release-build:
     name: Build release distributions
     runs-on: ubuntu-latest
+    outputs:
+      package_name: ${{ steps.package-metadata.outputs.package_name }}
+      package_version: ${{ steps.package-metadata.outputs.package_version }}
 
     steps:
       - name: Check out repository
@@ -22,6 +25,66 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+
+      - name: Read package metadata
+        id: package-metadata
+        run: |
+          python - <<'PY'
+          import tomllib
+          from pathlib import Path
+
+          data = tomllib.loads(Path("pyproject.toml").read_text(encoding="utf-8"))
+          package = data["project"]["name"]
+          version = data["project"]["version"]
+
+          output = Path(__import__("os").environ["GITHUB_OUTPUT"])
+          with output.open("a", encoding="utf-8") as fh:
+              fh.write(f"package_name={package}\n")
+              fh.write(f"package_version={version}\n")
+          PY
+
+      - name: Ensure release tag matches package version
+        if: github.event_name == 'release'
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          PACKAGE_VERSION: ${{ steps.package-metadata.outputs.package_version }}
+        run: |
+          expected="$PACKAGE_VERSION"
+          alt="v$PACKAGE_VERSION"
+          if [ "$RELEASE_TAG" != "$expected" ] && [ "$RELEASE_TAG" != "$alt" ]; then
+            echo "Release tag '$RELEASE_TAG' does not match package version '$PACKAGE_VERSION'." >&2
+            exit 1
+          fi
+
+      - name: Ensure version is not already on PyPI
+        env:
+          PACKAGE_NAME: ${{ steps.package-metadata.outputs.package_name }}
+          PACKAGE_VERSION: ${{ steps.package-metadata.outputs.package_version }}
+        run: |
+          python - <<'PY'
+          import os
+          import sys
+          import urllib.error
+          import urllib.request
+
+          package = os.environ["PACKAGE_NAME"]
+          version = os.environ["PACKAGE_VERSION"]
+          url = f"https://pypi.org/pypi/{package}/{version}/json"
+
+          try:
+              with urllib.request.urlopen(url) as response:
+                  if response.status == 200:
+                      print(
+                          f"PyPI already has {package} {version}. "
+                          "Bump the version in pyproject.toml and create a new release tag.",
+                          file=sys.stderr,
+                      )
+                      sys.exit(1)
+          except urllib.error.HTTPError as exc:
+              if exc.code == 404:
+                  sys.exit(0)
+              raise
+          PY
 
       - name: Build and validate distributions
         run: |
@@ -41,11 +104,12 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - release-build
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
     permissions:
       id-token: write
     environment:
       name: pypi
-      url: https://pypi.org/project/cryptdesk/
+      url: https://pypi.org/project/${{ needs.release-build.outputs.package_name }}/
 
     steps:
       - name: Download release distributions
