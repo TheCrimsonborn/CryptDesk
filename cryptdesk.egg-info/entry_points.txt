@@ -1,0 +1,2 @@
+[console_scripts]
+cryptdesk = cryptdesk.__main__:main

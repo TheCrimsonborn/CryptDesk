@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cryptdesk"
+version = "0.1.0"
+description = "Peer-to-peer encrypted screen sharing and remote control desktop app"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "CryptDesk" }]
+dependencies = [
+  "PySide6>=6.8",
+  "cryptography>=44.0.0",
+  "pynput>=1.7.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2.2",
+  "pyinstaller>=6.11",
+  "pytest>=8.3",
+]
+
+[project.scripts]
+cryptdesk = "cryptdesk.__main__:main"
+
+[tool.setuptools]
+packages = ["cryptdesk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

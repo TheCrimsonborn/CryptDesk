@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+cryptdesk/__init__.py
+cryptdesk/__main__.py
+cryptdesk/app.py
+cryptdesk/control.py
+cryptdesk/crypto.py
+cryptdesk/network.py
+cryptdesk/protocol.py
+cryptdesk/screen.py
+cryptdesk.egg-info/PKG-INFO
+cryptdesk.egg-info/SOURCES.txt
+cryptdesk.egg-info/dependency_links.txt
+cryptdesk.egg-info/entry_points.txt
+cryptdesk.egg-info/requires.txt
+cryptdesk.egg-info/top_level.txt
+tests/test_crypto.py
