@@ -53,6 +53,9 @@ jobs:
       contents: write
 
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
       - name: Download Windows executable
         uses: actions/download-artifact@v5
         with:
@@ -62,6 +65,5 @@ jobs:
       - name: Upload asset to GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.event.release.tag_name || inputs.release_tag }}
-        run: gh release upload "$RELEASE_TAG" dist/*-windows-x64.exe --clobber
+        run: gh release upload "$RELEASE_TAG" dist/*-windows-x64.exe --clobber --repo "${{ github.repository }}"
