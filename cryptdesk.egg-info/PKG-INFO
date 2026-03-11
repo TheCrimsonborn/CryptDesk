@@ -74,6 +74,15 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 
 PyInstaller output will be generated in `dist\CryptDesk`.
 
+## GitHub Actions
+
+Two workflows are included under `.github/workflows`:
+
+- `python-package.yml` runs compile checks, `pytest`, and package builds on pushes, pull requests, and manual dispatch.
+- `python-publish.yml` builds `sdist` and `wheel` distributions and publishes them to PyPI when a GitHub release is published or when manually triggered.
+
+The publish workflow is configured for PyPI Trusted Publishing. In PyPI, register `cryptdesk` with this repository and the workflow file `python-publish.yml`, and use the GitHub environment name `pypi`.
+
 ## Tests
 
 ```powershell
