@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CryptDesk | Direct Encrypted Remote Support</title>
+    <meta
+      name="description"
+      content="CryptDesk is a peer-to-peer remote support app with end-to-end encrypted screen sharing, host-gated control, and direct desktop-to-desktop sessions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-glow page-glow-one"></div>
+    <div class="page-glow page-glow-two"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">CD</span>
+        <span class="brand-text">
+          <strong>CryptDesk</strong>
+          <span>Remote support without relay clutter</span>
+        </span>
+      </a>
+      <nav class="topnav">
+        <a href="#workflow">Workflow</a>
+        <a href="#trust">Trust</a>
+        <a href="#downloads">Downloads</a>
+        <a href="https://github.com/TheCrimsonborn/CryptDesk/security/policy">Security</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">P2P + E2EE DESKTOP SUPPORT</p>
+          <h1>Direct remote sessions with visible trust checks.</h1>
+          <p class="lede">
+            CryptDesk keeps the connection path simple: host and viewer connect directly,
+            compare a safety code, and enable remote control only when the host says yes.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
+              Get The Windows EXE
+            </a>
+            <a class="button button-secondary" href="https://github.com/TheCrimsonborn/CryptDesk">
+              View Source
+            </a>
+          </div>
+
+          <ul class="hero-points">
+            <li>Ephemeral X25519 key exchange per session</li>
+            <li>AES-GCM encrypted transport for screen and input traffic</li>
+            <li>Explicit host consent before remote control is active</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="session-window">
+            <div class="session-topline">
+              <span class="status-chip status-online">Live</span>
+              <span class="session-route">viewer -> host:48555</span>
+              <span class="status-chip status-warn">Input gated</span>
+            </div>
+            <div class="session-canvas">
+              <div class="canvas-grid"></div>
+              <div class="canvas-badge">fullscreen session</div>
+              <div class="canvas-message">
+                <strong>Safety code</strong>
+                <span>7C44-A21D-9F0A-6D88</span>
+              </div>
+            </div>
+            <div class="session-metrics">
+              <article>
+                <span>transport</span>
+                <strong>Direct TCP</strong>
+              </article>
+              <article>
+                <span>identity</span>
+                <strong>Manual verify</strong>
+              </article>
+              <article>
+                <span>control</span>
+                <strong>Host approved</strong>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell stats-band">
+        <article class="stat-card reveal delay-1">
+          <span class="stat-label">Connection model</span>
+          <strong>Peer to peer</strong>
+          <p>No central relay in the current design. Works best on LAN, VPN, or forwarded routes.</p>
+        </article>
+        <article class="stat-card reveal delay-2">
+          <span class="stat-label">Security posture</span>
+          <strong>Session-bound encryption</strong>
+          <p>Optional shared secret, per-session keys, and a visible safety code on both ends.</p>
+        </article>
+        <article class="stat-card reveal delay-3">
+          <span class="stat-label">Operator control</span>
+          <strong>Host says when input starts</strong>
+          <p>Screen sharing can stay on while keyboard and mouse remain blocked until consent is clear.</p>
+        </article>
+      </section>
+
+      <section id="workflow" class="section-shell content-grid">
+        <div class="section-heading">
+          <p class="eyebrow">WORKFLOW</p>
+          <h2>Remote support in one clean path.</h2>
+          <p>
+            CryptDesk is built for the common support flow: share a route, verify identity,
+            then control only if the person on the other end wants that to happen.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-step reveal delay-1">
+            <span class="timeline-index">01</span>
+            <h3>Expose a route</h3>
+            <p>The host starts sharing and sends an IP address and port to the viewer.</p>
+          </article>
+          <article class="timeline-step reveal delay-2">
+            <span class="timeline-index">02</span>
+            <h3>Connect directly</h3>
+            <p>The viewer dials the target route with an optional shared secret for extra assurance.</p>
+          </article>
+          <article class="timeline-step reveal delay-3">
+            <span class="timeline-index">03</span>
+            <h3>Verify the safety code</h3>
+            <p>Both sides compare the visible fingerprint before they trust the session.</p>
+          </article>
+          <article class="timeline-step reveal delay-4">
+            <span class="timeline-index">04</span>
+            <h3>Enable control deliberately</h3>
+            <p>The host allows remote input, and only then can the viewer send mouse or keyboard events.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="trust" class="section-shell trust-panel">
+        <div class="trust-copy">
+          <p class="eyebrow">TRUST MODEL</p>
+          <h2>No hidden handoff. No silent control.</h2>
+          <p>
+            The app keeps its security cues visible instead of burying them behind setup friction.
+            The session should stay understandable to the person sharing their machine.
+          </p>
+        </div>
+
+        <div class="trust-cards">
+          <article class="trust-card reveal delay-1">
+            <h3>End-to-end session keys</h3>
+            <p>X25519 is used for ephemeral key exchange and the resulting transport is encrypted with AES-GCM.</p>
+          </article>
+          <article class="trust-card reveal delay-2">
+            <h3>Human-verifiable fingerprint</h3>
+            <p>The safety code gives both peers a simple way to confirm they are looking at the same session.</p>
+          </article>
+          <article class="trust-card reveal delay-3">
+            <h3>Optional shared secret</h3>
+            <p>An extra passphrase can be mixed into session derivation when the route is shared through weaker channels.</p>
+          </article>
+          <article class="trust-card reveal delay-4">
+            <h3>Explicit host control gate</h3>
+            <p>Remote input is blocked until the host toggles approval, even if the viewer already sees the screen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="downloads" class="section-shell download-grid">
+        <div class="section-heading compact">
+          <p class="eyebrow">DOWNLOADS</p>
+          <h2>Pick the path that matches how you ship it.</h2>
+        </div>
+
+        <article class="download-card reveal delay-1">
+          <span class="download-label">WINDOWS</span>
+          <h3>Standalone EXE</h3>
+          <p>Use the release asset for a click-to-run Windows build produced by the repository workflow.</p>
+          <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
+            Open Releases
+          </a>
+        </article>
+
+        <article class="download-card reveal delay-2">
+          <span class="download-label">PYTHON</span>
+          <h3>PyPI Package</h3>
+          <p>Install from PyPI if you want the Python package path instead of the standalone desktop build.</p>
+          <a class="button button-secondary" href="https://pypi.org/project/cryptdesk/">
+            Open PyPI
+          </a>
+        </article>
+
+        <article class="download-card reveal delay-3">
+          <span class="download-label">SOURCE</span>
+          <h3>Repository</h3>
+          <p>Clone the repo, inspect the protocol and crypto code, or build custom binaries from source.</p>
+          <a class="button button-secondary" href="https://github.com/TheCrimsonborn/CryptDesk">
+            Open GitHub
+          </a>
+        </article>
+      </section>
+
+      <section class="section-shell closing-banner">
+        <div>
+          <p class="eyebrow">OPEN SOURCE</p>
+          <h2>Built in Python and PySide6 for people who want the transport path to stay legible.</h2>
+        </div>
+        <div class="closing-actions">
+          <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
+            Download
+          </a>
+          <a class="button button-secondary" href="https://github.com/TheCrimsonborn/CryptDesk/security/policy">
+            Read Security Policy
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>CryptDesk</p>
+      <p>Peer-to-peer remote support with explicit trust cues.</p>
+    </footer>
+  </body>
+</html>

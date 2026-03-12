@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc">
+  <title id="title">CryptDesk abstract preview</title>
+  <desc id="desc">Stylized network and session geometry used as a decorative background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2138" />
+      <stop offset="100%" stop-color="#09121f" />
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#75e1cd" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffd58b" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)" />
+  <g stroke="url(#line)" stroke-width="2" fill="none">
+    <path d="M140 180h240l120 110h230" />
+    <path d="M180 470h220l160-160h250" />
+    <path d="M210 320h120" />
+    <path d="M650 160h130" />
+    <path d="M700 520h120" />
+  </g>
+  <g fill="#75e1cd" fill-opacity="0.28">
+    <circle cx="140" cy="180" r="8" />
+    <circle cx="380" cy="180" r="8" />
+    <circle cx="500" cy="290" r="8" />
+    <circle cx="730" cy="290" r="8" />
+    <circle cx="180" cy="470" r="8" />
+    <circle cx="400" cy="470" r="8" />
+    <circle cx="560" cy="310" r="8" />
+    <circle cx="810" cy="310" r="8" />
+  </g>
+  <g fill="#ffd58b" fill-opacity="0.16">
+    <rect x="180" y="120" width="170" height="48" rx="24" />
+    <rect x="610" y="120" width="130" height="48" rx="24" />
+    <rect x="150" y="520" width="240" height="60" rx="20" />
+    <rect x="610" y="470" width="180" height="60" rx="20" />
+  </g>
+</svg>
