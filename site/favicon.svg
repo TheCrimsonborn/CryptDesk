@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">CryptDesk favicon</title>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#75e1cd" />
+      <stop offset="100%" stop-color="#11998e" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#07111f" />
+  <rect x="16" y="16" width="96" height="96" rx="22" fill="url(#panel)" />
+  <path d="M43 41h22c13 0 22 10 22 23s-9 23-22 23H43z" fill="#07111f" />
+  <path d="M55 53h10c7 0 11 5 11 11s-4 11-11 11H55z" fill="#75e1cd" />
+</svg>

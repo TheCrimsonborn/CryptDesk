@@ -3,11 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CryptDesk | Direct Encrypted Remote Support</title>
+    <title>CryptDesk Remote Desktop | Open Source P2P Remote Desktop And Screen Sharing</title>
     <meta
       name="description"
-      content="CryptDesk is a peer-to-peer remote support app with end-to-end encrypted screen sharing, host-gated control, and direct desktop-to-desktop sessions."
+      content="CryptDesk is an open source remote desktop, remote access, and screen sharing app with peer-to-peer transport, end-to-end encryption, and host-gated remote control."
     />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="canonical" href="https://thecrimsonborn.github.io/CryptDesk/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CryptDesk" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="CryptDesk Remote Desktop | Open Source P2P Remote Desktop And Screen Sharing" />
+    <meta
+      property="og:description"
+      content="Direct remote desktop and screen sharing with peer-to-peer sessions, end-to-end encryption, safety code verification, and explicit host consent."
+    />
+    <meta property="og:url" content="https://thecrimsonborn.github.io/CryptDesk/" />
+    <meta property="og:image" content="https://thecrimsonborn.github.io/CryptDesk/preview.svg" />
+    <meta property="og:image:alt" content="CryptDesk remote desktop product preview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CryptDesk Remote Desktop" />
+    <meta
+      name="twitter:description"
+      content="Open source remote desktop, remote access, and screen sharing with peer-to-peer encrypted sessions."
+    />
+    <meta name="twitter:image" content="https://thecrimsonborn.github.io/CryptDesk/preview.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +40,45 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://thecrimsonborn.github.io/CryptDesk/#website",
+            "url": "https://thecrimsonborn.github.io/CryptDesk/",
+            "name": "CryptDesk",
+            "description": "Open source remote desktop, remote access, and screen sharing software with peer-to-peer encrypted sessions."
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://thecrimsonborn.github.io/CryptDesk/#organization",
+            "name": "CryptDesk",
+            "url": "https://thecrimsonborn.github.io/CryptDesk/",
+            "logo": "https://thecrimsonborn.github.io/CryptDesk/favicon.svg",
+            "sameAs": [
+              "https://github.com/TheCrimsonborn/CryptDesk",
+              "https://pypi.org/project/cryptdesk/"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://thecrimsonborn.github.io/CryptDesk/#page",
+            "name": "CryptDesk Remote Desktop",
+            "url": "https://thecrimsonborn.github.io/CryptDesk/",
+            "description": "CryptDesk is an open source remote desktop and screen sharing app with peer-to-peer transport, end-to-end encryption, safety code verification, and host-gated remote control.",
+            "isPartOf": {
+              "@id": "https://thecrimsonborn.github.io/CryptDesk/#website"
+            },
+            "about": {
+              "@id": "https://thecrimsonborn.github.io/CryptDesk/#organization"
+            },
+            "primaryImageOfPage": "https://thecrimsonborn.github.io/CryptDesk/preview.svg"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div class="page-glow page-glow-one"></div>
@@ -39,16 +103,17 @@
     <main id="top">
       <section class="hero section-shell">
         <div class="hero-copy">
-          <p class="eyebrow">P2P + E2EE DESKTOP SUPPORT</p>
-          <h1>Direct remote sessions with visible trust checks.</h1>
+          <p class="eyebrow">OPEN SOURCE REMOTE DESKTOP</p>
+          <h1>Peer-to-peer remote desktop and screen sharing without relay clutter.</h1>
           <p class="lede">
-            CryptDesk keeps the connection path simple: host and viewer connect directly,
-            compare a safety code, and enable remote control only when the host says yes.
+            CryptDesk is remote desktop and remote access software for direct support sessions.
+            Host and viewer connect peer to peer, compare a safety code, and enable remote
+            control only when the host approves it.
           </p>
 
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
-              Get The Windows EXE
+              Download Remote Desktop EXE
             </a>
             <a class="button button-secondary" href="https://github.com/TheCrimsonborn/CryptDesk">
               View Source
@@ -56,9 +121,9 @@
           </div>
 
           <ul class="hero-points">
-            <li>Ephemeral X25519 key exchange per session</li>
-            <li>AES-GCM encrypted transport for screen and input traffic</li>
-            <li>Explicit host consent before remote control is active</li>
+            <li>Remote desktop, remote access, screen sharing, and remote control in one flow</li>
+            <li>Ephemeral X25519 key exchange and AES-GCM encrypted session transport</li>
+            <li>Explicit host consent before remote mouse and keyboard control becomes active</li>
           </ul>
         </div>
 
@@ -98,28 +163,28 @@
       <section class="section-shell stats-band">
         <article class="stat-card reveal delay-1">
           <span class="stat-label">Connection model</span>
-          <strong>Peer to peer</strong>
-          <p>No central relay in the current design. Works best on LAN, VPN, or forwarded routes.</p>
+          <strong>Peer-to-peer remote access</strong>
+          <p>No central relay in the current design. This remote desktop workflow works best on LAN, VPN, or forwarded routes.</p>
         </article>
         <article class="stat-card reveal delay-2">
           <span class="stat-label">Security posture</span>
           <strong>Session-bound encryption</strong>
-          <p>Optional shared secret, per-session keys, and a visible safety code on both ends.</p>
+          <p>Optional shared secret, per-session keys, and a visible safety code for every screen sharing session.</p>
         </article>
         <article class="stat-card reveal delay-3">
           <span class="stat-label">Operator control</span>
           <strong>Host says when input starts</strong>
-          <p>Screen sharing can stay on while keyboard and mouse remain blocked until consent is clear.</p>
+          <p>Remote desktop viewing can stay live while keyboard and mouse input remain blocked until consent is clear.</p>
         </article>
       </section>
 
       <section id="workflow" class="section-shell content-grid">
         <div class="section-heading">
           <p class="eyebrow">WORKFLOW</p>
-          <h2>Remote support in one clean path.</h2>
+          <h2>Remote desktop support in one clean path.</h2>
           <p>
-            CryptDesk is built for the common support flow: share a route, verify identity,
-            then control only if the person on the other end wants that to happen.
+            CryptDesk is built for remote support, desktop sharing, and direct remote access.
+            Share a route, verify identity, then control only if the person on the other end wants that to happen.
           </p>
         </div>
 
@@ -152,7 +217,7 @@
           <p class="eyebrow">TRUST MODEL</p>
           <h2>No hidden handoff. No silent control.</h2>
           <p>
-            The app keeps its security cues visible instead of burying them behind setup friction.
+            The app keeps its remote access trust cues visible instead of burying them behind setup friction.
             The session should stay understandable to the person sharing their machine.
           </p>
         </div>
@@ -160,19 +225,19 @@
         <div class="trust-cards">
           <article class="trust-card reveal delay-1">
             <h3>End-to-end session keys</h3>
-            <p>X25519 is used for ephemeral key exchange and the resulting transport is encrypted with AES-GCM.</p>
+            <p>X25519 is used for ephemeral key exchange and the resulting remote desktop transport is encrypted with AES-GCM.</p>
           </article>
           <article class="trust-card reveal delay-2">
             <h3>Human-verifiable fingerprint</h3>
-            <p>The safety code gives both peers a simple way to confirm they are looking at the same session.</p>
+            <p>The safety code gives both peers a simple way to confirm they are looking at the same remote desktop session.</p>
           </article>
           <article class="trust-card reveal delay-3">
             <h3>Optional shared secret</h3>
-            <p>An extra passphrase can be mixed into session derivation when the route is shared through weaker channels.</p>
+            <p>An extra passphrase can be mixed into session derivation when a remote access route is shared through weaker channels.</p>
           </article>
           <article class="trust-card reveal delay-4">
             <h3>Explicit host control gate</h3>
-            <p>Remote input is blocked until the host toggles approval, even if the viewer already sees the screen.</p>
+            <p>Remote input is blocked until the host toggles approval, even if the viewer already sees the screen or desktop preview.</p>
           </article>
         </div>
       </section>
@@ -185,8 +250,8 @@
 
         <article class="download-card reveal delay-1">
           <span class="download-label">WINDOWS</span>
-          <h3>Standalone EXE</h3>
-          <p>Use the release asset for a click-to-run Windows build produced by the repository workflow.</p>
+          <h3>Standalone remote desktop EXE</h3>
+          <p>Use the release asset for a click-to-run Windows remote desktop build produced by the repository workflow.</p>
           <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
             Open Releases
           </a>
@@ -194,8 +259,8 @@
 
         <article class="download-card reveal delay-2">
           <span class="download-label">PYTHON</span>
-          <h3>PyPI Package</h3>
-          <p>Install from PyPI if you want the Python package path instead of the standalone desktop build.</p>
+          <h3>PyPI remote access package</h3>
+          <p>Install from PyPI if you want the Python package path instead of the standalone remote desktop build.</p>
           <a class="button button-secondary" href="https://pypi.org/project/cryptdesk/">
             Open PyPI
           </a>
@@ -213,8 +278,8 @@
 
       <section class="section-shell closing-banner">
         <div>
-          <p class="eyebrow">OPEN SOURCE</p>
-          <h2>Built in Python and PySide6 for people who want the transport path to stay legible.</h2>
+          <p class="eyebrow">REMOTE ACCESS SOFTWARE</p>
+          <h2>Built in Python and PySide6 for people who want remote desktop software with a legible transport path.</h2>
         </div>
         <div class="closing-actions">
           <a class="button button-primary" href="https://github.com/TheCrimsonborn/CryptDesk/releases/latest">
@@ -229,7 +294,7 @@
 
     <footer class="footer">
       <p>CryptDesk</p>
-      <p>Peer-to-peer remote support with explicit trust cues.</p>
+      <p>Open source remote desktop and screen sharing with explicit trust cues.</p>
     </footer>
   </body>
 </html>
